@@ -1,0 +1,21 @@
+<h2 class="text-xl font-bold">E-Waste Dashboard</h2>
+<ul id="itemsList" class="mt-4"></ul>
+
+<script>
+async function loadItems() {
+  let response = await fetch("http://localhost:3000/api/items");
+  let items = await response.json();
+
+  let list = document.getElementById("itemsList");
+  list.innerHTML = "";
+  items.forEach(item => {
+    list.innerHTML += `
+      <li class="border p-2 mb-2">
+        <b>${item.itemName}</b> - ${item.location} 
+        <span class="text-green-600">(${item.status})</span>
+      </li>`;
+  });
+}
+
+loadItems();
+</script>

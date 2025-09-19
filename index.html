@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart E-Waste Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <canvas id="stars"></canvas>
+<script src="js/stars.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+  <body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="images/logo.jpg" alt="Green circular logo with a recycling symbol and leaf design" class="h-12 w-12">
+                        <span class="ml-2 text-xl font-bold text-gray-800">Eco Cycle</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-green-700 px-3 py-2 font-medium">Features</a>
+                    <a href="#dashboard" class="text-gray-700 hover:text-green-700 px-3 py-2 font-medium">Dashboard</a>
+                    <a href="#reporting" class="text-gray-700 hover:text-green-700 px-3 py-2 font-medium">Reporting</a>
+                    <a href="#education" class="text-gray-700 hover:text-green-700 px-3 py-2 font-medium">Education</a>
+                    <button class="ml-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md font-medium transition duration-300"><a href="login.html">
+                          Login
+                    </a>
+                      
+                    </button>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 focus:outline-none" id="mobile-menu-button">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Features</a>
+                <a href="#dashboard" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Dashboard</a>
+                <a href="function.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Reporting</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Education</a>
+                <button class="w-full block text-left px-3 py-2 rounded-md text-base font-medium text-white bg-green-600 hover:bg-green-700">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white relative">
+  <div class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="md:flex md:items-center md:justify-between">
+      <div class="md:w-1/2">
+        <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+          Smart E-Waste Management System
+        </h1>
+        <p class="mt-6 text-xl max-w-3xl">
+          Transforming electronic waste management with digital tracking, smart categorization, and sustainable solutions for campuses and communities.
+        </p>
+        <div class="mt-10 flex space-x-4">
+          <a href="#dashboard"
+            class="px-6 py-3 bg-green-500 hover:bg-green-400 rounded-md text-lg font-medium text-white transition duration-300">
+            Get Started
+          </a>
+          <a href="#features"
+            class="px-6 py-3 bg-white hover:bg-gray-100 rounded-md text-lg font-medium text-gray-800 transition duration-300">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slideshow background -->
+  <div class="absolute inset-0 overflow-hidden">
+    <img id="slideshow" src="images/assortment-dirty-dumped-objects.jpg" class="w-full h-full object-cover transition-opacity duration-1000 opacity-100">
+  </div>
+</section>
+      
+
+      
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="stat-card bg-white p-6 rounded-lg shadow-lg border-t-4 border-green-500 transition duration-300">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-green-100 rounded-md p-3">
+                            <i class="fas fa-microchip text-green-600 text-2xl"></i>
+                        </div>
+                        <div class="ml-5">
+                            <h3 class="text-lg font-medium text-gray-900">Total E-Waste Tracked</h3>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">247 kg</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card bg-white p-6 rounded-lg shadow-lg border-t-4 border-blue-500 transition duration-300">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-blue-100 rounded-md p-3">
+                            <i class="fas fa-recycle text-blue-600 text-2xl"></i>
+                        </div>
+                        <div class="ml-5">
+                            <h3 class="text-lg font-medium text-gray-900">Recycling Rate</h3>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">78%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card bg-white p-6 rounded-lg shadow-lg border-t-4 border-orange-500 transition duration-300">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-orange-100 rounded-md p-3">
+                            <i class="fas fa-users text-orange-600 text-2xl"></i>
+                        </div>
+                        <div class="ml-5">
+                            <h3 class="text-lg font-medium text-gray-900">Active Users</h3>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">42</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        Comprehensive E-Waste Management Solution
+      </h2>
+      <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+        Our platform provides end-to-end solutions for tracking, managing, and properly disposing of electronic waste.
+      </p>
+    </div>
+
+    <!-- Link to function.html -->
+    <!-- Link to function.html -->
+<div class="text-center mt-8">
+  <a href="function.html" 
+     class="relative inline-block px-8 py-4 text-lg font-semibold text-white rounded-full shadow-lg
+            bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500
+            hover:from-teal-500 hover:via-green-500 hover:to-emerald-500
+            transform hover:scale-105 transition duration-300 ease-in-out">
+    🚀 Explore Features
+  </a>
+</div>
+
+  </div>
+</section>
+
+    <!-- Dashboard Section -->
+   <section id="dashboard" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                E-Waste Management Dashboard
+            </h2>
+            <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+                Real-time tracking and management of all e-waste items across your organization.
+            </p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-6 shadow-inner">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900">E-Waste Inventory</h3>
+                    <p class="text-sm text-gray-600">Last updated 15 minutes ago</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex space-x-3">
+                    <button class="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        <i class="fas fa-filter mr-2"></i> Filter
+                    </button>
+                    <button class="px-4 py-2 bg-green-600 rounded-md text-sm font-medium text-white hover:bg-green-700">
+                        <i class="fas fa-plus mr-2"></i> Add Item
+                    </button>
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <!-- <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item ID</th> -->
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+                            <!-- <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Location</th> -->
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <!-- <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date Added</th> -->
+                            <!-- <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th> -->
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <!-- <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#EW-2304-0572</td> -->
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Laptop</td>
+                            <!-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Computer Lab, Bldg A</td> -->
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Pending Pickup</span>
+                            </td>
+                            <!-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">May 2, 2023</td> -->
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <!-- <a href="#" class="text-green-600 hover:text-green-900 mr-3">View</a> -->
+                                <!-- <a href="#" class="text-red-600 hover:text-red-900">Delete</a> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <!-- <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#EW-2304-1093</td> -->
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Projector</td>
+                            <!-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Conference Room, Bldg C</td> -->
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Assessment</span>
+                            </td>
+                            <!-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">May 5, 2023</td> -->
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <!-- <a href="#" class="text-green-600 hover:text-green-900 mr-3">View</a> -->
+                                <!-- <a href="#" class="text-red-600 hover:text-red-900">Delete</a> -->
+                            </td>
+                        </tr>
+                        <tr>
+                         <!-- <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#EW-2304-2018</td> -->
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Batteries</td>
+                            <!-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Biology Lab, Bldg B</td> -->
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Hazardous</span>
+                            </td>
+                            <!-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">May 7, 2023</td> -->
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <!-- <a href="#" class="text-green-600 hover:text-green-900 mr-3">View</a> -->
+                                <!-- <a href="#" class="text-red-600 hover:text-red-900">Delete</a> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <!-- <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#EW-2304-3165</td> -->
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Mobile Phones</td>
+                            <!-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">IT Department</td> -->
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Available</span>
+                            </td>
+                            <!-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">May 10, 2023</td> -->
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <!-- <a href="#" class="text-green-600 hover:text-green-900 mr-3">View</a> -->
+                                <!-- <a href="#" class="text-red-600 hover:text-red-900">Delete</a> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer Section -->
+    <footer class="footer-main">
+        <div class="footer-container">
+            <!-- Team Members Section -->
+            <div class="team-section">
+                <h2 class="section-title">Our Expert Team</h2>
+                <p class="section-subtitle">Dedicated professionals driving sustainable e-waste solutions</p>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo-container">
+                            <img src="me.jpg" alt="Dr. Sarah Chen - Environmental Scientist, Asian female in lab coat examining circuit board" class="member-photo">
+                        </div>
+                        <h3 class="member-name">Md Huzaifa Hayat</h3>
+                        
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo-container">
+                            <img src="Rahim.jpg" alt="Michael Rodriguez - Operations Director, Hispanic male in safety vest at recycling facility" class="member-photo">
+                        </div>
+
+                        <h3 class="member-name">Md Rahimuddin</h3>
+                      
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo-container">
+                            <img src="vinit.jpg" alt="Priya Patel - Technology Lead, South Asian female developer working on dashboard analytics" class="member-photo">
+                        </div>
+                        <h3 class="member-name">Vinit Singh</h3>
+                       
+                      
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo-container">
+                            <img src="debolina.jpg" alt="David Okafor - Community Outreach, Black male speaking at environmental conference" class="member-photo">
+                        </div>
+                        <h3 class="member-name">Debolina Debnath</h3>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Row -->
+            <div class="footer-content-grid">
+                <!-- Brand Column -->
+                <div class="footer-brand-col">
+                    <div class="footer-brand">
+                        <img src="https://placehold.co/50x50" alt="GreenTech Solutions logo featuring a circuit board shaped like a leaf" class="footer-logo">
+                        <span class="footer-brand-name">GreenTech Solutions</span>
+                    </div>
+                    <p class="footer-mission">Pioneering smart e-waste management through innovative technology and community engagement since 2025.</p>
+                    
+                    <div class="certifications">
+                        <span class="cert-badge">ISO 14001 Certified</span>
+                        <span class="cert-badge">R2 Standard</span>
+                        <span class="cert-badge">EPEAT Registered</span>
+                    </div>
+
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="footer-links-col">
+                    <h3 class="footer-heading">Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">E-Waste Collection</a></li>
+                        <li><a href="#" class="footer-link">Data Destruction</a></li>
+                        <li><a href="#" class="footer-link">Asset Remarketing</a></li>
+                        <li><a href="#" class="footer-link">ITAD Services</a></li>
+                        <li><a href="#" class="footer-link">Sustainability Reporting</a></li>
+                        <li><a href="#" class="footer-link">Compliance Consulting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Column -->
+
+
+                <!-- Contact Column -->
+                <div class="footer-contact-col">
+                    <h3 class="footer-heading">Contact Our Team</h3>
+                    <address class="footer-contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <span><br> chowbaga,kolkata 700107</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt contact-icon"></i>
+                            <span>+91 912845188 </span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <span>hayathuzaifa10@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <span>Monday-Saturday<br>7:00 AM - 7:00 PM </span>
+                        </div>
+                    </address>
+                </div>
+            </div>
+ <body>
+   <!-- tumhara purana form yaha hai -->
+
+   <h3>Items List:</h3>
+   <ul id="itemsList"></ul>
+   <button onclick="addItem()">Add Item</button>
+   <button onclick="loadItems()">Show Items</button>
+       <script>
+     async function addItem() {
+       // backend me item add karne ka code
+     }
+
+     async function loadItems() {
+       // backend se items load karne ka code
+     }
+   </script>
+
+
+            <!-- Newsletter Row -->
+            <div class="footer-newsletter">
+                <div class="newsletter-content">
+                    <h3 class="newsletter-title">Join Our Sustainability Journey</h3>
+                    <p class="newsletter-subtitle">Get monthly insights on e-waste trends, recycling tips, and exclusive content from our experts</p>
+                </div>
+
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <span>&copy; 2025 ECO_Tech Solutions, Inc. All rights reserved.</span>
+                    <div class="footer-legal-links">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <a href="#" class="legal-link">Terms of Service</a>
+                        <a href="#" class="legal-link">Cookie Policy</a>
+                        <a href="#" class="legal-link">Accessibility</a>
+                        <a href="#" class="legal-link">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slideshow background -->
+
+  <script src="js/script.js"></script>
+  <script src="js/stars.js"></script>
+</body>
+</html>
